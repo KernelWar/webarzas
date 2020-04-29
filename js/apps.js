@@ -12,7 +12,7 @@ function abrirFacebook() {
     if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
         window.location = app;
     } else {
-        window.location = desktopFallback;
+        window.open(desktopFallback, '_blank')
     }
 }
 AFRAME.registerComponent('instagram-listener', {
@@ -24,11 +24,11 @@ AFRAME.registerComponent('instagram-listener', {
 });
 
 function abrirInstagram() {
-    var desktopFallback = "https://www.instagram.com",
-        app = "instagram";
+    var desktopFallback = "https://www.instagram.com/nuts_about_birds",
+        app = "intent://instagram.com/_u/nuts_about_birds/#Intent;package=com.instagram.android;scheme=https;end";
     if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
         window.location = app;
     } else {
-        window.location = desktopFallback;
+        window.open(desktopFallback, '_blank')
     }
 }

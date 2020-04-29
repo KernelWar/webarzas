@@ -7,7 +7,8 @@
     <link rel="shortcut icon" type="image/png" href="logo.png" />
     <title>WebAR-zas</title>
     <!--
-    
+        
+        
     <script src="https://aframe.io/releases/0.8.2/aframe.js"></script>
     -->
     <script src="aframe/aframe.min.js"></script>
@@ -20,16 +21,7 @@
     <link rel="stylesheet" href="css/estilos.css">
     <script src="js/disparadores.js"></script>
     <script src="js/apps.js"></script>
-    <script>
-        $("#btn-facebook").click(function() {
-            alert("facebook");
-            abrirFacebook();
-        });
-        $("#btn-instagram").click(function() {
-            alert("instagram");
-            abrirInstagram();
-        });
-    </script>
+
 </head>
 
 <body style="margin: 0; overflow: hidden;">
@@ -53,31 +45,33 @@
         </a-assets>
         <a-marker emitevents="true" marcador preset="hiro" visible="false">
 
-            <a-entity id="lluvia-zas" spe-particles="texture: logo.png; color: #ccc; size: 1.5; radius: 1; velocity: 0 -0.5 0; maxAge: 6; positionSpread: 2 0 2; randomizePosition: true; particleCount: 16; velocitySpread: 0.1 0.2 0.1; wiggleSpread: 1" position="0 1.818 -0.723" scale="1 1 1"> </a-entity>
+            <a-entity rotation="-50 0 0" position="0 0.169 1">
+                <a-entity id="lluvia-zas" spe-particles="texture: logo.png; color: #ccc; size: 1.5; radius: 1; velocity: 0 -0.5 0; maxAge: 6; positionSpread: 2 0 2; randomizePosition: true; particleCount: 16; velocitySpread: 0.1 0.2 0.1; wiggleSpread: 1" position="0 2 0.900" scale="1 1 1"> </a-entity>
 
-            <a-entity id="area-textos" geometry="primitive: plane; height: 0.3; width: 1.25; skipCache: true" material="" position="0 0.166 -0.571" rotation="-40 0 0"></a-entity>
-            <a-entity id="info-0">
-                <a-image src="#zas-bienvenido" width="3" height="1.5" position="0 0.671 -1" material="" geometry="width: 1.26; height: 1" rotation="-40 0 0"></a-image>
-                <a-entity text__descripcion-zas="align: center; color: #000000; value: Descubre nuestra plataforma\n con una experiencia\nde realidad aumentada; wrapCount: 38.5" position="0 0.177 -0.542" rotation="-40 0 0"></a-entity>
+                <a-entity id="area-textos" geometry="primitive: plane; height: 0.3; width: 1.25; skipCache: true" material="" position="0 0.166 -0.571" rotation="-40 0 0"></a-entity>
+                <a-entity id="info-0">
+                    <a-image src="#zas-bienvenido" width="3" height="1.5" position="0 0.671 -1" material="" geometry="width: 1.26; height: 1" rotation="-40 0 0"></a-image>
+                    <a-entity text__descripcion-zas="align: center; color: #000000; value: Descubre nuestra plataforma\n con una experiencia\nde realidad aumentada; wrapCount: 38.5" position="0 0.177 -0.542" rotation="-40 0 0"></a-entity>
+                </a-entity>
+
+                <a-entity id="info-1">
+                    <a-image src="#info-img-1" width="3" height="1.5" position="0 0.671 -1" geometry="width: 1.26; height: 1" rotation="-40 0 0"></a-image>
+                    <a-entity text__descripcion-zas="align: center; color: #000000; value: Restaurant\nAndre ; wrapCount: 20; letterSpacing: 21.11; tabSize: 50" position="0 0.177 -0.542" rotation="-40 0 0"></a-entity>
+                </a-entity>
+
+                <a-entity id="info-2">
+                    <a-entity text__descripcion-zas="align: center; color: #000000; value: Siguenos en nuestras redes sociales; wrapCount: 28.75" position="0 0.174 -0.534" rotation="-40 0 0"></a-entity>
+                    <a-entity obj-model="mtl: #facebook-mtl; obj: #facebook-obj" rotation="55.718 0 0" position="-0.639 1.147 -0.985" scale="0.414 0.414 0.414" animation="property: position; to: -0.639 1.5 -0.985; loop: true; dur: 500; dir: alternate; elasticity: 40; easing:easeInOutQuad;" facebook-listener></a-entity>
+                    <a-entity obj-model="mtl: #instagram-mtl; obj: #instagram-obj" rotation="55.718 0 0" position="0.668 1.147 -0.985" scale="0.414 0.414 0.414" animation="property: position; to: 0.668 1.5 -0.985; loop: true; dur: 500; dir: alternate; elasticity: 40; easing:easeInOutQuad;" instagram-listener></a-entity>
+                </a-entity>
+
+                <a-entity id="jetModel" scale="0.05 0.05 0.05" gltf-model="#avion-papel" parametric-path-follow="xFunction: cos(t); yFunction: 0.5*sin(3*t); zFunction: 2*sin(t); tMax: 6.283; loop: true" position="0.734 -0.874 2.241" rotation="64.487 -61.57300000000001 61.512">
+                </a-entity>
+
+                <a-entity id="efectos" iluminacion position="0 1 5.105" particleplayer="on: particleplayerstart; src: #particlesJson; img: #particleTex; dur: 4000; count: 50%; scale: 0.6; pscale: 2; interpolate: true; shader: standard; poolSize: 20; color: #0000ff"></a-entity>
+
+
             </a-entity>
-
-            <a-entity id="info-1">
-                <a-image src="#info-img-1" width="3" height="1.5" position="0 0.671 -1" geometry="width: 1.26; height: 1" rotation="-40 0 0"></a-image>
-                <a-entity text__descripcion-zas="align: center; color: #000000; value: Restaurant\nAndre ; wrapCount: 20; letterSpacing: 21.11; tabSize: 50" position="0 0.177 -0.542" rotation="-40 0 0"></a-entity>
-            </a-entity>
-
-            <a-entity id="info-2">
-                <a-entity text__descripcion-zas="align: center; color: #000000; value: Siguenos en nuestras redes sociales; wrapCount: 28.75" position="0 0.174 -0.534" rotation="-40 0 0"></a-entity>
-                <a-entity obj-model="mtl: #facebook-mtl; obj: #facebook-obj" rotation="55.718 0 0" position="-0.639 1.147 -0.985" scale="0.414 0.414 0.414" animation="property: position; to: -0.639 1.5 -0.985; loop: true; dur: 500; dir: alternate; elasticity: 40; easing:easeInOutQuad;" facebook-listener></a-entity>
-                <a-entity obj-model="mtl: #instagram-mtl; obj: #instagram-obj" rotation="55.718 0 0" position="0.668 1.147 -0.985" scale="0.414 0.414 0.414" animation="property: position; to: 0.668 1.5 -0.985; loop: true; dur: 500; dir: alternate; elasticity: 40; easing:easeInOutQuad;" instagram-listener></a-entity>
-            </a-entity>
-
-            <a-entity id="jetModel" scale="0.05 0.05 0.05" gltf-model="#avion-papel" parametric-path-follow="xFunction: cos(t); yFunction: 0.5*sin(3*t); zFunction: 2*sin(t); tMax: 6.283; loop: true" position="0.734 -0.874 2.241" rotation="64.487 -61.57300000000001 61.512">
-            </a-entity>
-
-            <a-entity id="efectos" iluminacion position="0 1 5.105" particleplayer="on: particleplayerstart; src: #particlesJson; img: #particleTex; dur: 4000; count: 50%; scale: 0.6; pscale: 2; interpolate: true; shader: standard; poolSize: 20; color: #0000ff"></a-entity>
-
-
         </a-marker>
 
         <a-entity camera>
@@ -87,6 +81,14 @@
 
 
     </a-scene>
+    <script>
+        $("#btn-facebook").click(function() {
+            abrirFacebook();
+        });
+        $("#btn-instagram").click(function() {
+            abrirInstagram();
+        });
+    </script>
     <script src="js/controlador-escenario.js"></script>
 </body>
 
