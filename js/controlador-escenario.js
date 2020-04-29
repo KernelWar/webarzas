@@ -2,6 +2,8 @@ $(document).ready(function() {
     var seleccionado = 0;
     var fingaleria = 2
     document.getElementById("herramientas").style.visibility = "hidden";
+    $("#btn-facebook").hide();
+    $("#btn-instagram").hide();
 
     function mostrar(elemento) {
         //console.log("mostrar: ",elemento);
@@ -23,6 +25,13 @@ $(document).ready(function() {
             seleccionado = -1;
         }
         seleccionado = seleccionado + 1;
+        if(seleccionado == 2){
+            $("#btn-facebook").show( "slow" );
+            $("#btn-instagram").show( "slow" );
+        }else{
+            $("#btn-facebook").hide( "slow" );
+            $("#btn-instagram").hide( "slow" );
+        }
         mostrar(seleccionado);
     });
 

@@ -9,12 +9,23 @@
     align-items: center;
     z-index: 10;
 }
-#btn-siguiente{            
+.btn{
     padding: 10px;
-    background: #29e754;
     border: none;
     outline:0 !important;
     cursor: pointer;
+    margin-right: 20px;
+}
+#btn-facebook{                
+    background: #0242d7;
+    color: white;
+}
+#btn-siguiente{                
+    background: #29e754;
+}
+#btn-instagram{                
+    background: #c64a4e;
+    color: white;
 }
 
 #btn-siguiente:active{
