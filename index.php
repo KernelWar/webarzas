@@ -18,6 +18,7 @@
     <script src="aframe/animaciones/parser.js"></script>
     <script src="aframe/animaciones/aframe-parametric-path-follow.js"></script>
     <script src="js/jquery.js"></script>
+    
     <link rel="stylesheet" href="css/estilos.css">
     <script src="js/disparadores.js"></script>
     <script src="js/apps.js"></script>
@@ -30,7 +31,7 @@
         <button class="btn" id="btn-siguiente"> haga click!!</button>
         <button class="btn" id="btn-instagram"> Instagram</button>
     </div>
-    <a-scene id="escenario" embedded arjs="debugUIEnabled: false;">
+    <a-scene id="escenario" embedded arjs="debugUIEnabled: false;" loading-screen="dotsColor: red; backgroundColor: black">
         <a-assets>
             <a-asset-item id="particlesJson" src="aframe/particles-fireworks.json"></a-asset-item>
             <img id="particleTex" src="aframe/sprite.png">
