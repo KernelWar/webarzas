@@ -7,7 +7,7 @@
 
 
 # Características
-  - Deteccion de marcador HIRO
+  - Detección de marcador HIRO
   - Se implementa la librería AFRAME SPE PARTICLES para la creación de partículas con animaciones
   (https://github.com/harlyq/aframe-spe-particles-component)  
   - Se implementa la librería AFRAME PRAMETRIC PATH FOLLOW Y PARSER para la animación de movimientos con ecuaciones paramétricas  
